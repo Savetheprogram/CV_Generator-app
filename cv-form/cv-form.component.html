@@ -1,0 +1,127 @@
+<div class="row">
+  <div class="col-xl-1"></div>
+  <div class="col-sm-3">
+    <label for="personalInfo"><h3>Personal Info</h3></label>
+    <hr>
+    <form id = "personalInfo">
+      <div class="row">
+        <div class="col-xl-6" >
+          <label for="name">Name</label>
+          <input
+            ngModel
+            id="name"
+            type="text"
+            name="firstName"
+            class="form-control"
+            required
+            [(ngModel)] ="userData.name" >
+          <p>{{userData.name}}</p>
+        </div>
+          <div class="col-xl-6 ">
+          <label for="Surname">Surname</label>
+          <input
+            ngModel
+            id="surname"
+            type="text"
+            name="surname"
+            class="form-control"
+            required
+            [(ngModel)] ="userData.surname" >
+            <p>{{userData.surname}}</p>
+          </div>
+        <div class="col-xl-12">
+          <label for="email">Email</label>
+          <input
+            ngModel
+            id="email"
+            type="text"
+            name="email"
+            class="form-control"
+            email
+            required
+            [(ngModel)] ="userData.email" >
+          </div>
+        <div class="col-xl-12">
+          <label for="phoneNumber">Phone Number</label>
+          <input
+            ngModel
+            id="phoneNumber"
+            type="text"
+            name="phoneNumber"
+            class="form-control"
+            required
+            min = 0
+            maxlength="9"
+            [(ngModel)] ="userData.phoneNumber">
+            <p>{{userData.phoneNumber}}</p>
+          </div>
+        <div class="col-xl-12">
+          <label for="address">Address</label>
+          <input
+            ngModel
+            id="address"
+            type="text"
+            name="address"
+            class="form-control"
+            required
+            [(ngModel)] ="userData.address">
+        </div>
+       </div>
+    </form>
+    <hr>
+    <label for="carrierInfo"><h3>Carrier Info</h3></label>
+    <form id="carrierInfo">
+      <div class="row">
+        <div class="col-xl-8 ">
+          <label><h5>Job experience</h5></label>
+         <div
+           *ngFor="let inputs of jobExperienceInputs"
+           class="col-xl-12">
+           <label for="experience">Title</label>
+            <div>
+            <input
+              class="form-control"
+              id="experience"
+              type="text"
+              name="experience"
+              ngModel>
+            </div>
+           <label for="employer">Previous Employer</label>
+           <div>
+             <input
+               class="form-control"
+               id="employer"
+               type="text"
+               name="employer"
+               ngModel>
+           </div>
+            <div class="row">
+              <div class="col-xl-6">
+                <label for="began">Began</label>
+                <input
+                  type="date"
+                  id="began"
+                  class="form-control">
+              </div>
+              <div class="col-xl-6">
+              <label for="ended">Ended</label>
+              <input
+               type="date"
+               id="ended"
+               class="form-control">
+              </div>
+            </div>
+           <hr>
+        </div>
+      </div>
+        <div class="col-xs-4" style="margin-top: 15px">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onAddJobExperience()">Add job experience</button>
+        </div>
+      </div>
+    </form>
+  </div>
+</div>
+
