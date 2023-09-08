@@ -72,7 +72,7 @@
     <label for="carrierInfo"><h3>Carrier Info</h3></label>
     <form id="carrierInfo">
       <div class="row">
-        <div class="col-xl-8 ">
+        <div class="col-xl-12 ">
           <label><h5>Job experience</h5></label>
          <div
            *ngFor="let inputs of jobExperienceInputs"
@@ -84,7 +84,8 @@
               id="experience"
               type="text"
               name="experience"
-              ngModel>
+              ngModel
+              [(ngModel)]="title">
             </div>
            <label for="employer">Previous Employer</label>
            <div>
@@ -99,14 +100,18 @@
               <div class="col-xl-6">
                 <label for="began">Began</label>
                 <input
-                  type="date"
+                  name="began"
+                  ngModel
+                  type="month"
                   id="began"
                   class="form-control">
               </div>
               <div class="col-xl-6">
               <label for="ended">Ended</label>
               <input
-               type="date"
+                name="ended"
+                ngModel
+               type="month"
                id="ended"
                class="form-control">
               </div>
@@ -120,6 +125,64 @@
           type="button"
           (click)="onAddJobExperience()">Add job experience</button>
         </div>
+      </div>
+    </form>
+    <hr>
+    <label for="hobbyAndSkills"><h3>Hobby And Skills</h3></label>
+    <form id="hobbyAndSkills">
+      <label><h5>Skills</h5></label>
+          <div
+            *ngFor="let inputs of skillsInputs"
+              >
+            <div class="row">
+              <div class="col-xl-9">
+              <label for="skill">Skills</label>
+              <input
+                type="text"
+                name="skills"
+                ngModel
+                id="skill"
+                class="form-control">
+            </div>
+            <div class="col-xl-3">
+              <label for="skillLevel">Skill level</label>
+              <input
+                ngModel
+                id="skillLevel"
+                name="skillLevel"
+                class="form-control">
+            </div>
+          </div>
+            <hr>
+        </div>
+        <div class="col-xs-4" style="margin-top: 15px">
+          <button
+            class="btn btn-primary"
+            type="button"
+            (click)="onAddSkills()">Add Skills</button>
+        </div>
+      <label for="hobby"><h5>Hobby</h5></label>
+      <div
+        *ngFor="let inputs of hobbyInputs"
+        id="hobby"
+      >
+        <div class="row">
+          <div class="col-xl-12">
+            <input
+              type="text"
+              name="skills"
+              ngModel
+              id="hobbyInput"
+              class="form-control">
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="col-xs-4" style="margin-top: 15px">
+        <button
+          class="btn btn-primary"
+          type="button"
+          (click)="onAddHobby()">Add Hobby</button>
       </div>
     </form>
   </div>
