@@ -1,5 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {UserJobExperienceDataModel, UserPersonalDataModel} from "../shared/user-personal-data.model";
+import {NgForm} from "@angular/forms";
 
 @Component({
   selector: 'app-cv-form',
@@ -7,6 +8,7 @@ import {UserJobExperienceDataModel, UserPersonalDataModel} from "../shared/user-
   styleUrls: ['./cv-form.component.css']
 })
 export class CvFormComponent implements OnInit{
+  experience = []
   title: string
   employer: string
   began: Date
@@ -18,19 +20,12 @@ export class CvFormComponent implements OnInit{
     address: "",
     phoneNumber: null,
   }
-  userExperienceData: UserJobExperienceDataModel = {
-    jobTitle: '',
-    workExperience: {
-      title: '',
-      employer: '',
-      began: new Date(),
-      ended: new Date(),
-    },
-    skills: ''
-  }
+  userExperienceData: UserJobExperienceDataModel
+
   jobExperienceInputs: number[] = []
   skillsInputs: number[] = []
   hobbyInputs: number[] = []
+  person: UserJobExperienceDataModel
 
   ngOnInit() {
 
@@ -39,12 +34,23 @@ export class CvFormComponent implements OnInit{
 
 
   onAddJobExperience(){
+
     this.jobExperienceInputs.push(1)
-  }
+
+    }
+
   onAddSkills() {
     this.skillsInputs.push(1)
   }
   onAddHobby() {
     this.hobbyInputs.push(1)
+  }
+  onAddExperience(form: NgForm){
+    const formValue = form.value
+    this.person = new UserJobExperienceDataModel(
+      formValue.title, formValue.employer, formValue.began, formValue.ended
+
+    )
+    this.experience.push(this.person)
   }
 }

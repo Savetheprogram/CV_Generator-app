@@ -1,3 +1,15 @@
-* {
-  border: solid red 1px;
+
+#navbar {
+  background-color: rgb(240, 240, 240)
+}
+#top-space {
+  height: 50px;
+  background-color: rgb(240, 240, 240)
+}
+#cv-form-container {
+border: solid #142da6 1px;
+  height: 100%;
+}
+html, body {
+  height: 100%;
 }

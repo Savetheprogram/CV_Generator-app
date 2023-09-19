@@ -6,14 +6,17 @@ export type UserPersonalDataModel = {
   address: string
 }
 
-export type UserJobExperienceDataModel = {
-    jobTitle?: string,
-    workExperience?: {
-      title: string,
-      employer: string,
-      began: Date,
-      ended: Date | string,
-    },
-    skills?: string
+export class UserJobExperienceDataModel {
+    public  title: string
+    public  employer: string
+    public  began: Date
+    public  ended: Date | string
+
+  constructor(title: string, employer: string, began: Date, ended: Date | string) {
+      this.title = title
+      this.employer = employer
+      this.began = began
+      this.ended = ended
+  }
 }
 

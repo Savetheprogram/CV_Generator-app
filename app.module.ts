@@ -6,12 +6,16 @@ import { AppComponent } from './app.component';
 import {FormsModule} from "@angular/forms";
 import { CvFormComponent } from './cv-form/cv-form.component';
 import { CvDisplayComponent } from './cv-display/cv-display.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import { CvTemplatesComponent } from './cv-templates/cv-templates.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     CvFormComponent,
-    CvDisplayComponent
+    CvDisplayComponent,
+    NavbarComponent,
+    CvTemplatesComponent
   ],
   imports: [
     BrowserModule,

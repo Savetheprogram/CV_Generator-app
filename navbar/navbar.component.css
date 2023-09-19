@@ -1,0 +1,18 @@
+* {
+  background-color: rgb(240, 240, 240)
+}
+#navbar {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+app-cv-form {
+  border: solid red 1px;
+}
+.navElement {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-self: center;
+}
